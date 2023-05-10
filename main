@@ -1,0 +1,24 @@
+# 1
+# using recursion, if given a word/phrase return how many vowels(a,e,i,o,u) are in that phrase or word.
+# able to count how many vowels no matter if it is lowercase or uppercase 
+# Example: given the phrase I love python , it should return : 4
+
+def count_vowels(input):
+    counter = 0
+    if not input:
+        return 0
+
+    if input[0].lower() in 'aeiou': counter = 1
+    return counter + count_vowels(input[1:])
+
+user_input = input("enter phase or word to count the vowels:\n")
+print("number of vowels:", count_vowels(user_input))
+
+# 2
+# given a list of numbers : [40,35, 10, 15, 20]
+# create a new list containing each number from the previous list mutliplied by itself and print the new list.
+# Hint: use map() with a lambda funciton
+
+numbers = [40, 35, 10, 15, 20]
+mutliplied = map(lambda x: x*x, numbers)
+print("result:", list(mutliplied))
