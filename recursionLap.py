@@ -33,15 +33,15 @@ print the new list.
 Hint: use map() with a lambda funciton
 '''
 
-ListOfNum=[40,35, 10, 15, 20]
-def Dupplicate(ListOfNum):
-        return ListOfNum*ListOfNum
-nums=map(Dupplicate,ListOfNum,ListOfNum)  
-print(list(nums))
+# ListOfNum=[40,35, 10, 15, 20]
+# def Dupplicate(ListOfNum):
+#         return ListOfNum*ListOfNum
+# nums=map(Dupplicate,ListOfNum,ListOfNum)  
+# print(list(nums))
 
 #define a lambda function
 
-multiply_numbers = lambda ListOfNum: ListOfNum*ListOfNum
+multiply_numbers = list (map(lambda ListOfNum: ListOfNum*ListOfNum,[40,35, 10, 15, 20]))
 print(multiply_numbers)
 
 
