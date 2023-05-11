@@ -3,19 +3,21 @@
 Note: the function should be able to count how many vowels no matter if it is lowercase or uppercase .
 Example: given the phrase I love python , it should return : 4
 '''
-#How to transform this to a recursive function
 def vowels_counter(phrase :str) -> int:
-    lower_phrase = phrase.lower()
-    count = 0
-    vowels = ["a","e","i","o","u"]
-    for char in range(len(lower_phrase)):
-        if lower_phrase[char] in vowels:
-            count += 1
-    return count
-    
+    vowels = "aeiou"
+
+    if len(phrase) == 0:
+        return 0
+
+    if phrase[0].lower() in vowels:
+        return 1 + vowels_counter(phrase[1:])
+    return 0 +  vowels_counter(phrase[1:])
+
+def vowel_count(phrase):
+    pass
   
 
-phrase= input("Enter a Word/Phrase to count the vowels:")
+phrase= "I love python"
 print(vowels_counter(phrase))
 
 
