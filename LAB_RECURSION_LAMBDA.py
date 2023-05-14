@@ -18,13 +18,13 @@ print(list(number))
 
 print("--"*14)
 
-def recursion_vowel():
-    Sentence = input("Enter a phrase: ")
+def count_vowel(word : str):
     count = 0
-    vowel = ['a', 'e', 'i', 'o', 'u']
+    if len(word) == 0:
+        return count
+    if word[0].lower() in "aeiuo":
+        count = 1
 
-    for letter in Sentence:
-        if letter in vowel:
-            count += 1
-    print(count)
-recursion_vowel()    
+    return count + count_vowel(word[1:])
+
+print(count_vowel("I love python"))
